@@ -1,0 +1,373 @@
+/* ========== reinicio ========== */
+•⁠  ⁠{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== GLOBAL ========== */
+html {
+    scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.logo {
+  display: inline-block;
+  border-bottom: 2px solid transparent; /* sin línea inicialmente */
+  transition: border-bottom 0.3s ease;
+}
+
+.logo:hover {
+  border-bottom: 2px solid #fff; /* línea blanca en hover */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* ========== encabezado ========== */
+header {
+  background-color: #617fae;
+  border-bottom: 1px solid #ddd;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a:hover {
+  color: #ffffff; /* color blanco */
+}
+nav ul li a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+nav ul li a:hover {
+  border-color: #ffc107;
+}
+
+/* ========== HERO ========== */
+.hero {
+  background-color: #020507;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #5f5656;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffc107;
+  color: #000;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e0a800;
+}
+
+/* ========== INFORMACION ========== */
+.about h2,
+.projects h2,
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6b6666;
+}
+
+.about p,
+.contact p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ========== PROYECTO ========== */
+.projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.projects li {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ========== CONTACTO ========== */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.socials a {
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.socials a:hover {
+  border-color: #ffc107;
+}
+
+/* ========== PIE ========== */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+.social-left {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.sidebar-contact{
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  background-color: transparent; /* o algún color si querés */
+  z-index: 1000;
+}
+
+.sidebar-contact  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-contact a:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.lista-proyecto a {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lista-proyecto a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc107;
+  transition: width 0.3s ease;
+  bottom: -4px;
+}
+
+.lista-proyecto a:hover::after {
+  width: 100%;
+}
+
+.lista-proyecto a:hover {
+  color: #ffc107;
+}
+
+/* Centra el listado completo */
+.listado-proyectos {
+  display: flex;               /* En línea, en fila */
+  justify-content: center;     /* Centrado horizontalmente del contenido */
+  gap: 20px;                   /* Espacio entre los proyectos */
+  padding: 20px 0;
+  list-style: none;            /* Quitar viñetas */
+  margin: 0 auto;              /* Centra el ul */
+}
+
+/* Estilo de cada proyecto para que parezca tarjeta */
+.proyectos {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 150px; /* tamaño fijo, ajusta si quieres */
+  text-align: center;
+  cursor: pointer; /* opcional, que parezca clickeable */
+}
+
+.seccion-proyectos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px; /* separa de la sección contacto */
+}
+
+.proyectos-lista {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* separación entre cada proyecto */
+  flex-wrap: wrap; /* opcional por si se achica la pantalla */
+  margin-top: 10px;
+}
+
+.seccion-proyecto {position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  background-color: transparent; /* o algún color si querés */
+  z-index: 1000;}
+
+  .listado-proyectos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.proyecto {
+  background-color: #000000;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(10, 1, 1, 0.1);
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  transition: transformation 0.2s;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+
+.proyecto a {
+  color: #000;
+  text-decoration: none;
+}
+
+.proyecto a:hover {
+  color: #ffc107;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+#inicio { 
+  background-image: url('https://images.pexels.com/photos/4253060/pexels-photo-4253060.jpeg?_gl=1*1pdn39v*_ga*MTg4OTExNzAzMi4xNzUyNjQ5OTUy*_ga_8JE65Q40S6*czE3NTMzMjUyNzckbzMkZzEkdDE3NTMzMjUzMjAkajE3JGwwJGgw'); /* opcional, si quieres una imagen */
+  background-color: #eed486; /* color de fondo opcional */
+  background-size: cover; /* ajusta la imagen para cubrir toda la sección */
+  background-position: center; /* centra la imagen */
+  background-repeat: no-repeat; /* evita repetición de la imagen */
+}
+
+@media(max-width: 768px) {
+  /* En pantallas menores a 768px, ajusta estilos */
+  #proyectos {
+    padding: 10px;
+  }
+  .listado-proyectos {
+    flex-direction: column; /* Los proyectos en una columna en móvil */
+    align-items: center;    /* Centrados */
+  }
+  .proyecto {
+    flex: 1 1 90%; /* casi todo el ancho en móvil */
+  }
+}
+
+@media(min-width: 1200px) {
+  /* estilos para pantallas grandes */
+}
+@media(max-width: 1024px) {
+  /* estilos para tablets mayores o dispositivos específicos */
+}
+@media(max-width: 768px) {
+  /* estilos para teléfonos y pantallas pequeñas */
+}
+
+
+
+
